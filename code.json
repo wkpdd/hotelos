@@ -1,0 +1,18 @@
+{
+  "M00": "Email already exists",
+  "M01": "Username already exists",
+  "M02": "Login failed",
+  "M03": "Logout success",
+  "M04": "Register success",
+  "M05": "Register failed",
+  "M06": "Login success",
+  "M07": "Email not found",
+  "M08": "Password incorrect",
+  "M09": "User not found",
+  "M10": "Username not found",
+  "M11": "User already exists",
+  "M12": "User deleted",
+  "M13": "User updated",
+  "M14": "User created",
+  "M15": "Internal Server Error"
+}

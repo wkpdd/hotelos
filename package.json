@@ -1,0 +1,28 @@
+{
+  "name": "hotelos",
+  "version": "0.0.1",
+  "description": "backend of hotel application for management and protection",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": " nodemon server.js"
+  },
+  "keywords": [
+    "backend",
+    "hotel"
+  ],
+  "author": "Elwannas HIRI",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3"
+  }
+}
