@@ -14,5 +14,13 @@
   "M12": "User deleted",
   "M13": "User updated",
   "M14": "User created",
-  "M15": "Internal Server Error"
+  "M15": "Internal Server Error",
+  "M16": "Error Fetching Roles",
+  "M17": "Roles Fetched Successfully",
+  "M18" : "Role created", 
+  "M19": "Role Not Created",
+  "M20" : "Role Exist", 
+  "M21": "Error Checking Role if Deleted",
+  "M22": "Role deleted",
+  "M23": "Internal Server Error"
 }

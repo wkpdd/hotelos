@@ -72,7 +72,7 @@ const Booking = sequelize.define('Booking', {
 });
 
 // Define Models model
-const Models = sequelize.define('User', {
+const User = sequelize.define('User', {
     user_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -90,6 +90,10 @@ const Role = sequelize.define('Role', {
         primaryKey: true,
         autoIncrement: true
     },
+    isDeleted: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    },
     name: DataTypes.STRING
 });
 const UserAccess = sequelize.define('UserAccess', {
@@ -97,7 +101,7 @@ const UserAccess = sequelize.define('UserAccess', {
         type: DataTypes.INTEGER,
         primaryKey: true,
         references: {
-            model: Models,
+            model: User,
             key: 'user_id'
         }
     },
@@ -155,14 +159,14 @@ Room.belongsTo(Hotel, { foreignKey: 'hotel_id' });
 Hotel.hasMany(Review, { foreignKey: 'hotel_id' });
 Review.belongsTo(Hotel, { foreignKey: 'hotel_id' });
 
-Models.hasMany(Booking, { foreignKey: 'user_id' });
-Booking.belongsTo(Models, { foreignKey: 'user_id' });
+User.hasMany(Booking, { foreignKey: 'user_id' });
+Booking.belongsTo(User, { foreignKey: 'user_id' });
 
-Models.hasMany(Review, { foreignKey: 'user_id' });
-Review.belongsTo(Models, { foreignKey: 'user_id' });
+User.hasMany(Review, { foreignKey: 'user_id' });
+Review.belongsTo(User, { foreignKey: 'user_id' });
 
-Models.hasOne(Admin, { foreignKey: 'user_id' });
-Admin.belongsTo(Models, { foreignKey: 'user_id' });
+User.hasOne(Admin, { foreignKey: 'user_id' });
+Admin.belongsTo(User, { foreignKey: 'user_id' });
 
 // Sync models with the database
 sequelize.sync({ force: false }).then(() => {
@@ -176,7 +180,7 @@ module.exports = {
     Hotel,
     Room,
     Booking,
-    User: Models,
+    User,
     Review,
     Admin,
     Floor,
